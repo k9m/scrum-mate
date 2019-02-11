@@ -1,11 +1,12 @@
 package org.ing.hackathon.totalrecall.docprocessor.service.ocr;
 
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import net.sourceforge.tess4j.ITesseract;
 import net.sourceforge.tess4j.Tesseract;
 import net.sourceforge.tess4j.TesseractException;
-import org.ing.hackathon.totalrecall.docprocessor.model.DataRegion;
-import org.ing.hackathon.totalrecall.docprocessor.model.PageMasking;
+import org.ing.hackathon.totalrecall.docprocessor.model.ocr.DataRegion;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.imageio.ImageIO;
@@ -17,18 +18,18 @@ import java.io.InputStream;
 
 @Service
 @Slf4j
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class OcrService {
 
   public String process(
           final byte[] imageInBytes,
-          final PageMasking pageMasking,
           final DataRegion region){
     final ITesseract instance = new Tesseract();
     try {
       final BufferedImage img = convertToBufferedImage(imageInBytes);
       final String text = instance.doOCR(
               img,
-              generateRectangle(pageMasking, region, img));
+              generateRectangle(region, img));
       log.info("Text parsed: {}", text);
 
       return text;
@@ -40,25 +41,21 @@ public class OcrService {
   }
 
   private Rectangle generateRectangle(
-          final PageMasking pageMasking,
           final DataRegion region,
           final BufferedImage img){
 
-    final float widthProportion =  (float)img.getWidth() / (float)pageMasking.getPageWidth();
-    final float heightProportion = (float)img.getHeight() / (float)pageMasking.getPageHeight();
 
-    log.info("Page dimensions: [{},{}]", pageMasking.getPageWidth(), pageMasking.getPageHeight());
-    log.info("Page proportions: [{},{}]", widthProportion, heightProportion);
+    log.info("Page dimensions: [{},{}]", img.getWidth(), img.getHeight());
     log.info("Coords=>[{},{}] -> [{},{}]",
             region.getX1(),
             region.getY1(),
             region.getX2(),
             region.getY2());
 
-    final int x1 = (int)(region.getX1() * widthProportion);
-    final int y1 = (int)(region.getY1() * heightProportion);
-    final int width = (int)((region.getX2() - region.getX1()) * widthProportion);
-    final int height = (int)((region.getY2() - region.getY1()) * heightProportion);
+    final int x1 = region.getX1();
+    final int y1 = region.getY1();
+    final int width = (region.getX2() - region.getX1());
+    final int height = (region.getY2() - region.getY1());
 
     log.info("Rect  =>[{},{}] -> [{},{}]",
             x1,

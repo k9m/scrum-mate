@@ -1,12 +1,10 @@
 spring:
   application:
-    name: total-recall-docprocessor
-  datasource:
-    url: jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+    name: scrum-mate-ocr
 
 
 server:
-  port: 9802
+  port: 8081
   compression:
     enabled: true
     mime-types: application/json,application/xml,text/html,text/xml,text/plain,application/javascript,text/css
