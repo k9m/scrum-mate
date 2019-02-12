@@ -1,4 +1,5 @@
+numpy
+cv2
 pyzbar
 pytesseract
 cherrypy
-simplejson
