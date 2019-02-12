@@ -1,0 +1,4 @@
+pyzbar
+pytesseract
+cherrypy
+simplejson
