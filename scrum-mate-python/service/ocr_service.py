@@ -1,6 +1,8 @@
-import cv2
-import pytesseract
 import re
+
+import cv2
+import numpy as np
+import pytesseract
 from pyzbar.pyzbar import decode, ZBarSymbol
 
 JIRA_TICKET_PREFIX = 'SCRM8'
@@ -38,28 +40,21 @@ def split_image_to_columns(image):
         cropped_image = crop_image(image, start_column, end_column)
         columns.append(cropped_image)
 
-    return columns, list(qr_dic.values())
+    return columns
 
 
 def get_ticket_numbers(text, prefix):
     return re.findall(f"{prefix}-[0-9]\\d*", text)
 
 
-def get_board(path):
-    img = cv2.imread(path)
-    columns, labels = split_image_to_columns(img)
+def process(image_file):
+    img = cv2.imdecode(np.frombuffer(image_file, np.uint8), -1)
+    columns = split_image_to_columns(img)
 
-    for i in range(len(columns)):
-        cv2.imwrite('column' + str(i) + '.jpg', columns[i])
-
-    tickets_dic = {}
     for i in range(len(columns)):
         text = pytesseract.image_to_string(columns[i])
-        tickets_dic[labels[i]] = get_ticket_numbers(text, JIRA_TICKET_PREFIX)
+        tickets = get_ticket_numbers(text, JIRA_TICKET_PREFIX)
+        print('column' + str(i))
+        print(tickets)
 
-    return tickets_dic
-
-
-if __name__ == "__main__":
-    board = get_board('AgileBoardQr6.jpg')
-    print(board)
+    return columns

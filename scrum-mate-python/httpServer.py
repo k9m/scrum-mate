@@ -1,18 +1,29 @@
 import cherrypy
-import simplejson
+
+from service.ocr_service import process
+
 
 class Root(object):
 
     @cherrypy.expose
     def upload(self, file):
-        cl = cherrypy.request.headers['Content-Length']
-        data = file.file.read(8192)
-        print(data)
-        # TODO do the stuff
+        size = 0
+        all_data = bytearray()
+        while True:
+            data = file.file.read(8192)
+            all_data += data
+            if not data:
+                break
+            size += len(data)
 
-        # body = simplejson.loads(rawbody)
-        # do_something_with(body)
-        return "Blah"
+        process(all_data)
+
+        out = '''
+            length: {}
+            filename: {}
+            mime-type: {}
+            '''.format(size, file.filename, file.content_type, data)
+        return out
 
     @cherrypy.expose
     def index(self):
