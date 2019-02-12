@@ -6,10 +6,13 @@ RUN apt-get update \
   && ln -s /usr/bin/python3 python \
   && pip3 install --upgrade pip
 
+RUN mkdir service
+
 COPY requirements.txt ./
 COPY httpServer.py ./
 COPY mainQr.py ./
 COPY AgileBoardQr.jpg ./
+COPY service/* ./service/
 
 RUN pip3 install -r requirements.txt
 RUN apt-get update && \
