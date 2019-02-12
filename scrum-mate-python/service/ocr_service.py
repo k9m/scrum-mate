@@ -1,3 +1,4 @@
+import json
 import re
 
 import cv2
@@ -24,7 +25,7 @@ def split_image_to_columns(image):
     qr_dic = {}
     for qr in decoded:
         x = qr[2][0]  # The Left position of the QR code
-        qr_dic[x] = qr[0]  # The Data stored in the QR code
+        qr_dic[x] = str(qr[0], 'utf-8')  # The Data stored in the QR code
 
     sorted_qr_list = sorted(qr_dic.keys())
 
@@ -40,7 +41,7 @@ def split_image_to_columns(image):
         cropped_image = crop_image(image, start_column, end_column)
         columns.append(cropped_image)
 
-    return columns
+    return columns, list(qr_dic.values())
 
 
 def get_ticket_numbers(text, prefix):
@@ -49,12 +50,11 @@ def get_ticket_numbers(text, prefix):
 
 def process(image_file):
     img = cv2.imdecode(np.frombuffer(image_file, np.uint8), -1)
-    columns = split_image_to_columns(img)
+    columns, labels = split_image_to_columns(img)
 
+    tickets_dic = {}
     for i in range(len(columns)):
         text = pytesseract.image_to_string(columns[i])
-        tickets = get_ticket_numbers(text, JIRA_TICKET_PREFIX)
-        print('column' + str(i))
-        print(tickets)
+        tickets_dic[labels[i]] = get_ticket_numbers(text, JIRA_TICKET_PREFIX)
 
-    return columns
+    return json.dumps(tickets_dic)

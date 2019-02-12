@@ -7,23 +7,14 @@ class Root(object):
 
     @cherrypy.expose
     def upload(self, file):
-        size = 0
         all_data = bytearray()
         while True:
             data = file.file.read(8192)
             all_data += data
             if not data:
                 break
-            size += len(data)
 
-        process(all_data)
-
-        out = '''
-            length: {}
-            filename: {}
-            mime-type: {}
-            '''.format(size, file.filename, file.content_type, data)
-        return out
+        return process(all_data)
 
     @cherrypy.expose
     def index(self):
