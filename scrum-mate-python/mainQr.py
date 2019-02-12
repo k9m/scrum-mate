@@ -45,14 +45,15 @@ def get_ticket_numbers(text, prefix):
     return re.findall(f"{prefix}-[0-9]\\d*", text)
 
 
-img = cv2.imread('AgileBoardQr.jpg')
-columns = split_image_to_columns(img)
+if __name__ == "__main__":
+    img = cv2.imread('AgileBoardQr.jpg')
+    columns = split_image_to_columns(img)
 
-for i in range(len(columns)):
-    cv2.imwrite('column' + str(i) + '.jpg', columns[i])
+    for i in range(len(columns)):
+        cv2.imwrite('column' + str(i) + '.jpg', columns[i])
 
-for i in range(len(columns)):
-    text = pytesseract.image_to_string(columns[i])
-    tickets = get_ticket_numbers(text, JIRA_TICKET_PREFIX)
-    print('column' + str(i))
-    print(tickets)
+    for i in range(len(columns)):
+        text = pytesseract.image_to_string(columns[i])
+        tickets = get_ticket_numbers(text, JIRA_TICKET_PREFIX)
+        print('column' + str(i))
+        print(tickets)
