@@ -1,0 +1,16 @@
+version: '3.2'
+
+services:
+
+  scrum8-ocr:
+    build: ./scrum-mate-python
+    ports:
+      - 8081:8081
+
+  portainer:
+    image: portainer/portainer:latest
+    container_name: portainer
+    ports:
+      - "9000:9000"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"

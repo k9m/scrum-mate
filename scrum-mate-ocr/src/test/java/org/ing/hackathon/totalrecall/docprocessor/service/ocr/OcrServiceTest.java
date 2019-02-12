@@ -2,6 +2,7 @@ package org.ing.hackathon.totalrecall.docprocessor.service.ocr;
 
 import org.ing.hackathon.totalrecall.docprocessor.model.ocr.DataRegion;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import java.io.File;
@@ -56,6 +57,7 @@ public class OcrServiceTest {
     }
 
     @Test
+    @Ignore
     public void test() throws IOException {
         URL url = this.getClass().getResource("/test.pdf");
         File testWsdl = new File(url.getFile());
