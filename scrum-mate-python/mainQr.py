@@ -38,22 +38,28 @@ def split_image_to_columns(image):
         cropped_image = crop_image(image, start_column, end_column)
         columns.append(cropped_image)
 
-    return columns
+    return columns, list(qr_dic.values())
 
 
 def get_ticket_numbers(text, prefix):
     return re.findall(f"{prefix}-[0-9]\\d*", text)
 
 
-if __name__ == "__main__":
-    img = cv2.imread('AgileBoardQr.jpg')
-    columns = split_image_to_columns(img)
+def get_board(path):
+    img = cv2.imread(path)
+    columns, labels = split_image_to_columns(img)
 
     for i in range(len(columns)):
         cv2.imwrite('column' + str(i) + '.jpg', columns[i])
 
+    tickets_dic = {}
     for i in range(len(columns)):
         text = pytesseract.image_to_string(columns[i])
-        tickets = get_ticket_numbers(text, JIRA_TICKET_PREFIX)
-        print('column' + str(i))
-        print(tickets)
+        tickets_dic[labels[i]] = get_ticket_numbers(text, JIRA_TICKET_PREFIX)
+
+    return tickets_dic
+
+
+if __name__ == "__main__":
+    board = get_board('AgileBoardQr6.jpg')
+    print(board)
