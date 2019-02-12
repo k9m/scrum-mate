@@ -19,26 +19,25 @@ class Root(object):
         return """
 <html>
 <body>
-
-<div>
-    <form method="POST" enctype="multipart/form-data" action="/upload">
-        <table>
-            <tr>
-                <td>File to upload:</td>
-                <td><input type="file" name="file"/></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><input type="submit" value="Upload"/></td>
-            </tr>
-        </table>
-    </form>
-</div>
-
+    <div>
+        <form method="POST" enctype="multipart/form-data" action="/upload">
+            <table>
+                <tr>
+                    <td>File to upload:</td>
+                    <td><input type="file" name="file"/></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Upload"/></td>
+                </tr>
+            </table>
+        </form>
+    </div>
 </body>
 </html>
 """
 
 
+cherrypy.config.update({'server.socket_host': '0.0.0.0'})
 cherrypy.config.update({'server.socket_port': 8081})
 cherrypy.quickstart(Root())
