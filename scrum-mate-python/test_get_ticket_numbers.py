@@ -1,5 +1,6 @@
 from unittest import TestCase
-from mainQr import get_ticket_numbers
+
+from service.ocr_service import get_ticket_numbers
 
 
 class TestGetTicketNumbers(TestCase):
