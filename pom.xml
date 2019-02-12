@@ -20,6 +20,7 @@
 
 	<modules>
 		<module>scrum-mate-ocr</module>
+		<module>scrum-mate-python</module>
 	</modules>
 
 	<properties>
