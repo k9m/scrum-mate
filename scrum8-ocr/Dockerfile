@@ -10,8 +10,7 @@ RUN mkdir service && \
     mkdir assets
 
 COPY requirements.txt ./
-COPY httpServer.py ./
-COPY mainQr.py ./
+COPY *.py ./
 COPY AgileBoardQr.jpg ./
 COPY service/* ./service/
 COPY assets/* ./assets/

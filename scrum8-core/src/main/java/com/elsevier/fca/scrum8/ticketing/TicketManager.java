@@ -6,9 +6,7 @@ public class TicketManager {
   private final TicketTransitionCheck ticketTransitionCheck;
   private final TicketStateUpdater ticketStateUpdater;
 
-  public TicketManager(SprintTicketCheck sprintTicketCheck,
-      TicketTransitionCheck ticketTransitionCheck,
-      TicketStateUpdater ticketStateUpdater) {
+  public TicketManager(SprintTicketCheck sprintTicketCheck, TicketTransitionCheck ticketTransitionCheck, TicketStateUpdater ticketStateUpdater) {
     this.sprintTicketCheck = sprintTicketCheck;
     this.ticketTransitionCheck = ticketTransitionCheck;
     this.ticketStateUpdater = ticketStateUpdater;

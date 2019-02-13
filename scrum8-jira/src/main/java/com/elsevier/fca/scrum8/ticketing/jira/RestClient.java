@@ -1,30 +1,31 @@
 package com.elsevier.fca.scrum8.ticketing.jira;
 
-import java.util.List;
-import com.elsevier.fca.scrum8.ticketing.jira.model.Issue;
-import com.elsevier.fca.scrum8.ticketing.jira.model.Issues;
-import com.elsevier.fca.scrum8.ticketing.jira.model.Sprint;
-import com.elsevier.fca.scrum8.ticketing.jira.model.Sprints;
-import com.elsevier.fca.scrum8.ticketing.jira.model.Transition;
-import com.elsevier.fca.scrum8.ticketing.jira.model.Transitions;
-import com.elsevier.fca.scrum8.ticketing.jira.model.UpdateStateRequest;
+import com.elsevier.fca.scrum8.ticketing.jira.model.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
+import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
+import javax.annotation.PostConstruct;
+import java.util.List;
+
+@Component
 public class RestClient {
 
-  private static final String BASE_URL = "http://10.185.21.18:8080/rest";
+  @Autowired
+  private RestConfiguration restConfiguration;
+  
+  @Autowired
+  private RestTemplate restTemplate;  
 
-  private static final String AUTHORIZATION = "Basic VHNha2lyaXNHOjEyMzQ1Njc4QWE=";
+  private HttpHeaders httpHeaders;
 
-  private final RestTemplate restTemplate = new RestTemplate();
-  private final HttpHeaders httpHeaders;
-
-  public RestClient() {
+  @PostConstruct
+  public void init() {
     httpHeaders = new HttpHeaders();
-    httpHeaders.set("Authorization", AUTHORIZATION);
+    httpHeaders.set("Authorization", restConfiguration.getAuth());
   }
 
   private <T> T simpleGet(String uri, Class<T> type) {
@@ -33,22 +34,22 @@ public class RestClient {
   }
 
   public Sprint retrieveActiveSprint() {
-    String uri = BASE_URL + "/agile/latest/board/1/sprint?state=active&maxResults=1";
+    String uri = restConfiguration.getBaseUrl() + "/agile/latest/board/1/sprint?state=active&maxResults=1";
     return simpleGet(uri, Sprints.class).getValues().get(0);
   }
 
   public List<Issue> retrieveIssuesBySprint(int sprintId) {
-    String uri = BASE_URL + "/api/latest/search?jql=Sprint=" + sprintId + "&maxResults=1000";
+    String uri = restConfiguration.getBaseUrl() + "/api/latest/search?jql=Sprint=" + sprintId + "&maxResults=1000";
     return simpleGet(uri, Issues.class).getIssues();
   }
 
   public List<Transition> retrieveTransitionsByIssue(String key) {
-    String uri = BASE_URL + "/api/latest/issue/" + key + "/transitions";
+    String uri = restConfiguration.getBaseUrl() + "/api/latest/issue/" + key + "/transitions";
     return simpleGet(uri, Transitions.class).getTransitions();
   }
 
   public void updateIssueState(String key, Transition transition) {
-    String uri = BASE_URL + "/api/latest/issue/" + key + "/transitions";
+    String uri = restConfiguration.getBaseUrl() + "/api/latest/issue/" + key + "/transitions";
     UpdateStateRequest request = UpdateStateRequest.builder()
         .withTransition(transition)
         .build();
