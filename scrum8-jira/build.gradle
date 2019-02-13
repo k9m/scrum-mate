@@ -1,15 +1,14 @@
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '2.1.2.RELEASE'
+    id "io.spring.dependency-management" version "1.0.5.RELEASE"
 }
 
-apply plugin: 'io.spring.dependency-management'
+ext { springBootVersion = '2.1.2.RELEASE' }
 
 group 'com.elsevier.fca'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
-bootJar.enabled = false
 
 repositories {
     mavenCentral()
@@ -26,4 +25,8 @@ dependencies {
 //    implementation group: 'com.atlassian.jira', name: 'jira-rest-java-client-core', version: '5.1.0'
     //implementation group: 'org.springframework.boot', name: 'spring-boot-starter', version: '2.1.2.RELEASE'
 //    implementation group: 'com.atlassian.fugue', name: 'fugue', version: '2.6.1'
+}
+
+dependencyManagement {
+    imports { mavenBom("org.springframework.boot:spring-boot-dependencies:${springBootVersion}") }
 }

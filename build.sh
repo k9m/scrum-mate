@@ -7,5 +7,13 @@ mkdir build
 
 cat artifacts/jira.tar.gz.part* > build/jira.tar.gz
 gradle untar build
+
+cd scrum8-ocr
+docker build . -t fca/scrum8-ocr:latest
+
+cd $top
+cd scrum8-services
+docker build . -t fca/scrum8-services:latest
+
 docker-compose up -d
 

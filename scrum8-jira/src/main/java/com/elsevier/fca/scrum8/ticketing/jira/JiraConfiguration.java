@@ -18,7 +18,7 @@ public class JiraConfiguration {
     private final TicketStateUpdater ticketStateUpdater;
 
     @Bean
-    TicketManager createManager(){
+    public TicketManager createManager(){
         return new TicketManager(
                 sprintTicketCheck,
                 ticketTransitionCheck,
