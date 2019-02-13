@@ -2,6 +2,6 @@ group 'com.elsevier.fca'
 version '1.0-SNAPSHOT'
 
 task untar(type: Copy){
-    from tarTree(file('artifacts/jira.tar.gz'))
+    from tarTree(file('build/jira.tar.gz'))
     into file("${buildDir}")
 }
