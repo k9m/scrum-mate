@@ -3,6 +3,8 @@ plugins {
     id 'org.springframework.boot' version '2.1.2.RELEASE'
 }
 
+apply plugin: 'io.spring.dependency-management'
+
 group 'com.elsevier.fca'
 version '1.0-SNAPSHOT'
 
@@ -15,6 +17,8 @@ repositories {
 dependencies {
     implementation project(':scrum8-core')
     implementation project(':scrum8-jira')
-    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.1.2.RELEASE'
-    testImplementation group: 'junit', name: 'junit', version: '4.12'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web'
+    testImplementation group: 'junit', name: 'junit'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
 }

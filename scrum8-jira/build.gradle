@@ -1,6 +1,9 @@
 plugins {
     id 'java'
+    id 'org.springframework.boot' version '2.1.2.RELEASE'
 }
+
+apply plugin: 'io.spring.dependency-management'
 
 group 'com.elsevier.fca'
 version '1.0-SNAPSHOT'
@@ -15,8 +18,10 @@ repositories {
 dependencies {
     implementation project(':scrum8-core')
     implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.8'
-    implementation group: 'org.springframework', name: 'spring-web', version: '5.1.4.RELEASE'
-    testImplementation group: 'junit', name: 'junit', version: '4.12'
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web'
+    testImplementation group: 'junit', name: 'junit'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
 //    implementation group: 'com.atlassian.jira', name: 'jira-rest-java-client-core', version: '5.1.0'
     //implementation group: 'org.springframework.boot', name: 'spring-boot-starter', version: '2.1.2.RELEASE'
 //    implementation group: 'com.atlassian.fugue', name: 'fugue', version: '2.6.1'
