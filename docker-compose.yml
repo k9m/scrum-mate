@@ -7,6 +7,14 @@ services:
     ports:
       - "8081:8081"
 
+  jira:
+    image: cptactionhank/atlassian-jira:latest
+    ports:
+      - 8080:8080
+    volumes:
+      - ./home/:/var/atlassian/jira
+      - ./log/:/opt/atlassian/jira/logs
+
   portainer:
     image: portainer/portainer:latest
     container_name: portainer
