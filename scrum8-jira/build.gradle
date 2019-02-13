@@ -9,6 +9,7 @@ group 'com.elsevier.fca'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
+bootJar.enabled = false
 
 repositories {
     mavenCentral()

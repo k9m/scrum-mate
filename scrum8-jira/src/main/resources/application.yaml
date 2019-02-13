@@ -1,8 +1,0 @@
-spring:
-  application:
-    name: scrum8-jira
-
-server:
-  port: 8080
-
-
