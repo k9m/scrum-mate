@@ -1,10 +1,8 @@
 spring:
   application:
-    name: scrum8-jira
     name: scrum8-services
 
 server:
-  port: 8080
   port: 8082
 
 jira:

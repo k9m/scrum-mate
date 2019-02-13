@@ -1,11 +1,3 @@
-spring:
-  application:
-    name: scrum8-jira
-
-server:
-  port: 8080
-
 jira:
-  baseUrl: http://10.185.21.18:8080/rest
-  baseUrl: http://jira:8080/rest
+  baseUrl: http://jira:8082/rest
   auth: Basic VHNha2lyaXNHOjEyMzQ1Njc4QWE=
