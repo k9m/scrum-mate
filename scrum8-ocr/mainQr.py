@@ -16,7 +16,15 @@ def get_board(path):
     tickets_dic = {}
     for i in range(len(columns)):
         text = pytesseract.image_to_string(columns[i])
-        tickets_dic[labels[i]] = get_ticket_numbers(text, JIRA_TICKET_PREFIX)
+        tickets = get_ticket_numbers(text, JIRA_TICKET_PREFIX)
+        print(tickets)
+        text2 = pytesseract.image_to_string(columns[i], config="--psm 6")
+        tickets2 = get_ticket_numbers(text2, JIRA_TICKET_PREFIX)
+        print(tickets2)
+        text3 = pytesseract.image_to_string(columns[i], config="--psm 11")
+        tickets3 = get_ticket_numbers(text3, JIRA_TICKET_PREFIX)
+        print(tickets3)
+        tickets_dic[labels[i]] = list(set(tickets + tickets2 + tickets3))
 
     return tickets_dic
 
