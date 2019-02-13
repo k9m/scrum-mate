@@ -1,0 +1,6 @@
+rootProject.name = 'scrum8'
+include 'scrum8-core'
+include 'scrum8-jira'
+include 'scrum8-services'
+include 'scrum8-ocr'
+
