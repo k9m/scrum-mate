@@ -1,6 +1,7 @@
 package com.elsevier.fca.scrum8.ticketing.jira;
 
 import com.elsevier.fca.scrum8.ticketing.SprintTicketCheck;
+import com.elsevier.fca.scrum8.ticketing.TicketManager;
 import com.elsevier.fca.scrum8.ticketing.TicketStateUpdater;
 import com.elsevier.fca.scrum8.ticketing.TicketTransitionCheck;
 import org.junit.Test;

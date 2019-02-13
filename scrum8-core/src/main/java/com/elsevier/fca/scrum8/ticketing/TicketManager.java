@@ -1,19 +1,16 @@
-package com.elsevier.fca.scrum8.ticketing.jira;
+package com.elsevier.fca.scrum8.ticketing;
 
-import com.elsevier.fca.scrum8.ticketing.SprintTicketCheck;
-import com.elsevier.fca.scrum8.ticketing.TicketStateUpdater;
-import com.elsevier.fca.scrum8.ticketing.TicketTransitionCheck;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-@Component
-@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 public class TicketManager {
 
   private final SprintTicketCheck sprintTicketCheck;
   private final TicketTransitionCheck ticketTransitionCheck;
   private final TicketStateUpdater ticketStateUpdater;
+
+  public TicketManager(SprintTicketCheck sprintTicketCheck, TicketTransitionCheck ticketTransitionCheck, TicketStateUpdater ticketStateUpdater) {
+    this.sprintTicketCheck = sprintTicketCheck;
+    this.ticketTransitionCheck = ticketTransitionCheck;
+    this.ticketStateUpdater = ticketStateUpdater;
+  }
 
   public void updateState(String ticketId, String newState) {
     if (!sprintTicketCheck.isInActiveSprint(ticketId)) {

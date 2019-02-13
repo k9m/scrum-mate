@@ -1,7 +1,7 @@
 package com.elsevier.fca.scrum8.services.ticketing;
 
 import com.elsevier.fca.scrum8.services.ticketing.dto.StateTransitionRequest;
-import com.elsevier.fca.scrum8.ticketing.jira.TicketManager;
+import com.elsevier.fca.scrum8.ticketing.TicketManager;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;

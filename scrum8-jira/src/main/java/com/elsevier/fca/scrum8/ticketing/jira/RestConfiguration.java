@@ -13,8 +13,12 @@ public class RestConfiguration {
     private String baseUrl;
     private String auth;
 
+
+
     @Bean
     public RestTemplate restTemplate() {
         return new RestTemplate();
     }
+
+
 }
