@@ -1,7 +1,5 @@
-numpy
-opencv-python
-opencv-contrib-python
-pyzbar
-pytesseract
-cherrypy
-simplejson
+CherryPy==18.1.0
+opencv_python==4.0.0.21
+pyzbar==0.1.7
+numpy==1.16.1
+pytesseract==0.2.6
