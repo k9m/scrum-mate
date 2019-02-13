@@ -6,6 +6,8 @@ import numpy as np
 import pytesseract
 from pyzbar.pyzbar import decode, ZBarSymbol
 
+from service.jira_service import update_tickets
+
 JIRA_TICKET_PREFIX = 'SCRM8'
 
 
@@ -65,4 +67,4 @@ def process(image_file):
         # print(tickets3)
         tickets_dic[labels[i]] = list(set(tickets + tickets2 + tickets3))
 
-    return json.dumps(tickets_dic)
+    return json.dumps(update_tickets(tickets_dic))
