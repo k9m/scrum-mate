@@ -29,12 +29,13 @@ class Root(object):
                 
                 <form method="POST" enctype="multipart/form-data" action="/upload">
                 <div class="input-group">
-                  <div class="input-group-prepend">
-                    <input type="submit" class="btn btn-primary" value="Upload"/>
-                  </div>
+                  
                   <div class="custom-file">
                     <input type="file" class="custom-file-input"  name="file" >
-                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                    <label class="custom-file-label" for="inputGroupFile">Choose file</label>
+                  </div>
+                  <div class="input-group-prepend">
+                    <input type="submit" class="btn btn-primary" value="Upload"/>
                   </div>
                 </div>
                  </form>
