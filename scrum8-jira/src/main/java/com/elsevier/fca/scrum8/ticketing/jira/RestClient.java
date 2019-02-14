@@ -1,6 +1,7 @@
 package com.elsevier.fca.scrum8.ticketing.jira;
 
 import com.elsevier.fca.scrum8.ticketing.jira.model.*;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -12,6 +13,7 @@ import javax.annotation.PostConstruct;
 import java.util.List;
 
 @Component
+@Slf4j
 public class RestClient {
 
   @Autowired
@@ -24,6 +26,8 @@ public class RestClient {
 
   @PostConstruct
   public void init() {
+    log.info("@@@ JIRA baseUrl:{}", restConfiguration.getBaseUrl());
+
     httpHeaders = new HttpHeaders();
     httpHeaders.set("Authorization", restConfiguration.getAuth());
   }

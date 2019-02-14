@@ -1,32 +1,14 @@
-plugins {
-    id 'java'
-    id "io.spring.dependency-management" version "1.0.5.RELEASE"
-}
-
-ext { springBootVersion = '2.1.2.RELEASE' }
-
 group 'com.elsevier.fca'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 1.8
-
-repositories {
-    mavenCentral()
-    maven { url 'https://packages.atlassian.com/maven/repository/public' }
-}
-
 dependencies {
     implementation project(':scrum8-core')
+
     implementation group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.8'
     implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web'
-    testImplementation group: 'junit', name: 'junit'
+
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
-//    implementation group: 'com.atlassian.jira', name: 'jira-rest-java-client-core', version: '5.1.0'
-    //implementation group: 'org.springframework.boot', name: 'spring-boot-starter', version: '2.1.2.RELEASE'
-//    implementation group: 'com.atlassian.fugue', name: 'fugue', version: '2.6.1'
-}
 
-dependencyManagement {
-    imports { mavenBom("org.springframework.boot:spring-boot-dependencies:${springBootVersion}") }
+    testImplementation group: 'junit', name: 'junit'
 }

@@ -17,8 +17,6 @@ services:
     ports:
       - "8080:8080"
     volumes:
-      - ./home/:/var/atlassian/jira
-      - ./log/:/opt/atlassian/jira/logs
       - ./build/jira/home/:/var/atlassian/jira
       - ./build/jira/log/:/opt/atlassian/jira/logs
 

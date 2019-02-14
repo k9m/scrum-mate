@@ -1,24 +1,17 @@
-plugins {
-    id 'java'
-    id 'org.springframework.boot' version '2.1.2.RELEASE'
-}
-
-apply plugin: 'io.spring.dependency-management'
-
 group 'com.elsevier.fca'
 version '1.0-SNAPSHOT'
 
-sourceCompatibility = 1.8
-
-repositories {
-    mavenCentral()
-}
+apply plugin: 'org.springframework.boot'
 
 dependencies {
     implementation project(':scrum8-core')
     implementation project(':scrum8-jira')
-    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-web'
-    testImplementation group: 'junit', name: 'junit'
+
+    implementation group : 'org.springframework.boot', name : 'spring-boot-starter-actuator'
+    implementation group : 'org.springframework.boot', name : 'spring-boot-starter-web'
+
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+
+    testImplementation group : 'org.springframework.boot',name : 'spring-boot-starter-test'
 }

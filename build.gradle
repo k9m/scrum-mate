@@ -1,6 +1,52 @@
 group 'com.elsevier.fca'
 version '1.0-SNAPSHOT'
 
+buildscript {
+    ext {
+        springBootVersion = '2.1.2.RELEASE'
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies{
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+    }
+}
+
+
+wrapper{
+    distributionType = Wrapper.DistributionType.ALL
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+    }
+}
+
+subprojects {
+    tasks.withType(JavaCompile) {
+        sourceCompatibility = "1.8"
+        targetCompatibility = "1.8"
+    }
+
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'eclipse'
+    apply plugin: 'io.spring.dependency-management'
+
+    dependencyManagement {
+        imports { mavenBom org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES }
+    }
+
+    dependencies{
+        implementation platform("org.springframework.boot:spring-boot-dependencies:$springBootVersion")
+    }
+
+}
+
 task untar(type: Copy){
     from tarTree(file('build/jira.tar.gz'))
     into file("${buildDir}")
