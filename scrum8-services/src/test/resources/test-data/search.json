@@ -1,0 +1,784 @@
+{
+  "expand": "schema,names",
+  "startAt": 0,
+  "maxResults": 1000,
+  "total": 6,
+  "issues": [
+    {
+      "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+      "id": "10109",
+      "self": "http://localhost:8080/rest/api/latest/issue/10109",
+      "key": "SCRM8-10",
+      "fields": {
+        "issuetype": {
+          "self": "http://localhost:8080/rest/api/2/issuetype/10000",
+          "id": "10000",
+          "description": "A task that needs to be done.",
+          "iconUrl": "http://localhost:8080/secure/viewavatar?size=xsmall&avatarId=10318&avatarType=issuetype",
+          "name": "Task",
+          "subtask": false,
+          "avatarId": 10318
+        },
+        "components": [],
+        "timespent": null,
+        "timeoriginalestimate": null,
+        "description": null,
+        "project": {
+          "self": "http://localhost:8080/rest/api/2/project/10100",
+          "id": "10100",
+          "key": "SCRM8",
+          "name": "Scrum8",
+          "projectTypeKey": "software",
+          "avatarUrls": {
+            "48x48": "http://localhost:8080/secure/projectavatar?avatarId=10324",
+            "24x24": "http://localhost:8080/secure/projectavatar?size=small&avatarId=10324",
+            "16x16": "http://localhost:8080/secure/projectavatar?size=xsmall&avatarId=10324",
+            "32x32": "http://localhost:8080/secure/projectavatar?size=medium&avatarId=10324"
+          }
+        },
+        "fixVersions": [],
+        "aggregatetimespent": null,
+        "resolution": null,
+        "customfield_10005": "0|i00010:",
+        "customfield_10007": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@5c1ddc46[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@510b8faa[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@1b381b70[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@1643a162[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@701b56b2[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@71007f68[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@2ab809a3[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@217bf527[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@b7f897c[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@79f64c44[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@13e9a7c8[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@6d45aa5f[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+        "aggregatetimeestimate": null,
+        "resolutiondate": null,
+        "workratio": -1,
+        "summary": "Bump No.",
+        "lastViewed": null,
+        "watches": {
+          "self": "http://localhost:8080/rest/api/2/issue/SCRM8-10/watchers",
+          "watchCount": 1,
+          "isWatching": false
+        },
+        "creator": {
+          "self": "http://localhost:8080/rest/api/2/user?username=Esti+Murik",
+          "name": "Esti Murik",
+          "key": "esti murik",
+          "emailAddress": "e.murik@elsevier.com",
+          "avatarUrls": {
+            "48x48": "http://localhost:8080/secure/useravatar?avatarId=10336",
+            "24x24": "http://localhost:8080/secure/useravatar?size=small&avatarId=10336",
+            "16x16": "http://localhost:8080/secure/useravatar?size=xsmall&avatarId=10336",
+            "32x32": "http://localhost:8080/secure/useravatar?size=medium&avatarId=10336"
+          },
+          "displayName": "Esti Murik",
+          "active": true,
+          "timeZone": "GMT"
+        },
+        "subtasks": [],
+        "created": "2019-02-11T12:53:46.000+0000",
+        "reporter": {
+          "self": "http://localhost:8080/rest/api/2/user?username=Esti+Murik",
+          "name": "Esti Murik",
+          "key": "esti murik",
+          "emailAddress": "e.murik@elsevier.com",
+          "avatarUrls": {
+            "48x48": "http://localhost:8080/secure/useravatar?avatarId=10336",
+            "24x24": "http://localhost:8080/secure/useravatar?size=small&avatarId=10336",
+            "16x16": "http://localhost:8080/secure/useravatar?size=xsmall&avatarId=10336",
+            "32x32": "http://localhost:8080/secure/useravatar?size=medium&avatarId=10336"
+          },
+          "displayName": "Esti Murik",
+          "active": true,
+          "timeZone": "GMT"
+        },
+        "customfield_10000": null,
+        "aggregateprogress": {
+          "progress": 0,
+          "total": 0
+        },
+        "priority": {
+          "self": "http://localhost:8080/rest/api/2/priority/3",
+          "iconUrl": "http://localhost:8080/images/icons/priorities/medium.svg",
+          "name": "Medium",
+          "id": "3"
+        },
+        "labels": [],
+        "customfield_10004": [
+          "com.atlassian.greenhopper.service.sprint.Sprint@186187f8[id=1,rapidViewId=1,state=ACTIVE,name=SCRM8 Sprint 1,startDate=2019-02-11T13:40:30.348Z,endDate=2019-02-25T13:40:00.000Z,completeDate=<null>,sequence=1,goal=Experience a proper sprint • Deliver MVP • Stayin alive, staying alive, uh uh uh uh stayin aliiiiive]"
+        ],
+        "environment": null,
+        "timeestimate": null,
+        "aggregatetimeoriginalestimate": null,
+        "versions": [],
+        "duedate": null,
+        "progress": {
+          "progress": 0,
+          "total": 0
+        },
+        "issuelinks": [],
+        "votes": {
+          "self": "http://localhost:8080/rest/api/2/issue/SCRM8-10/votes",
+          "votes": 0,
+          "hasVoted": false
+        },
+        "assignee": null,
+        "updated": "2019-02-11T12:53:52.000+0000",
+        "status": {
+          "self": "http://localhost:8080/rest/api/2/status/10000",
+          "description": "",
+          "iconUrl": "http://localhost:8080/images/icons/status_generic.gif",
+          "name": "To Do",
+          "id": "10000",
+          "statusCategory": {
+            "self": "http://localhost:8080/rest/api/2/statuscategory/2",
+            "id": 2,
+            "key": "new",
+            "colorName": "blue-gray",
+            "name": "To Do"
+          }
+        }
+      }
+    },
+    {
+      "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+      "id": "10104",
+      "self": "http://localhost:8080/rest/api/latest/issue/10104",
+      "key": "SCRM8-5",
+      "fields": {
+        "issuetype": {
+          "self": "http://localhost:8080/rest/api/2/issuetype/10000",
+          "id": "10000",
+          "description": "A task that needs to be done.",
+          "iconUrl": "http://localhost:8080/secure/viewavatar?size=xsmall&avatarId=10318&avatarType=issuetype",
+          "name": "Task",
+          "subtask": false,
+          "avatarId": 10318
+        },
+        "components": [],
+        "timespent": null,
+        "timeoriginalestimate": null,
+        "description": null,
+        "project": {
+          "self": "http://localhost:8080/rest/api/2/project/10100",
+          "id": "10100",
+          "key": "SCRM8",
+          "name": "Scrum8",
+          "projectTypeKey": "software",
+          "avatarUrls": {
+            "48x48": "http://localhost:8080/secure/projectavatar?avatarId=10324",
+            "24x24": "http://localhost:8080/secure/projectavatar?size=small&avatarId=10324",
+            "16x16": "http://localhost:8080/secure/projectavatar?size=xsmall&avatarId=10324",
+            "32x32": "http://localhost:8080/secure/projectavatar?size=medium&avatarId=10324"
+          }
+        },
+        "fixVersions": [],
+        "aggregatetimespent": null,
+        "resolution": null,
+        "customfield_10005": "0|i00013:",
+        "customfield_10007": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@3a6abbdb[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@5ef6e9f7[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@11d0e556[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@78000fca[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@2de7dbfa[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@a22792c[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@1c4ed76b[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@6448e577[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@7763ca0f[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@6e9126d6[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@48e41e0[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@274e7f5b[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+        "aggregatetimeestimate": null,
+        "resolutiondate": null,
+        "workratio": -1,
+        "summary": "Harry Potter and the Philosopher's Stone",
+        "lastViewed": null,
+        "watches": {
+          "self": "http://localhost:8080/rest/api/2/issue/SCRM8-5/watchers",
+          "watchCount": 1,
+          "isWatching": false
+        },
+        "creator": {
+          "self": "http://localhost:8080/rest/api/2/user?username=Esti+Murik",
+          "name": "Esti Murik",
+          "key": "esti murik",
+          "emailAddress": "e.murik@elsevier.com",
+          "avatarUrls": {
+            "48x48": "http://localhost:8080/secure/useravatar?avatarId=10336",
+            "24x24": "http://localhost:8080/secure/useravatar?size=small&avatarId=10336",
+            "16x16": "http://localhost:8080/secure/useravatar?size=xsmall&avatarId=10336",
+            "32x32": "http://localhost:8080/secure/useravatar?size=medium&avatarId=10336"
+          },
+          "displayName": "Esti Murik",
+          "active": true,
+          "timeZone": "GMT"
+        },
+        "subtasks": [],
+        "created": "2019-02-11T12:50:38.000+0000",
+        "reporter": {
+          "self": "http://localhost:8080/rest/api/2/user?username=Esti+Murik",
+          "name": "Esti Murik",
+          "key": "esti murik",
+          "emailAddress": "e.murik@elsevier.com",
+          "avatarUrls": {
+            "48x48": "http://localhost:8080/secure/useravatar?avatarId=10336",
+            "24x24": "http://localhost:8080/secure/useravatar?size=small&avatarId=10336",
+            "16x16": "http://localhost:8080/secure/useravatar?size=xsmall&avatarId=10336",
+            "32x32": "http://localhost:8080/secure/useravatar?size=medium&avatarId=10336"
+          },
+          "displayName": "Esti Murik",
+          "active": true,
+          "timeZone": "GMT"
+        },
+        "customfield_10000": null,
+        "aggregateprogress": {
+          "progress": 0,
+          "total": 0
+        },
+        "priority": {
+          "self": "http://localhost:8080/rest/api/2/priority/3",
+          "iconUrl": "http://localhost:8080/images/icons/priorities/medium.svg",
+          "name": "Medium",
+          "id": "3"
+        },
+        "labels": [],
+        "customfield_10004": [
+          "com.atlassian.greenhopper.service.sprint.Sprint@186187f8[id=1,rapidViewId=1,state=ACTIVE,name=SCRM8 Sprint 1,startDate=2019-02-11T13:40:30.348Z,endDate=2019-02-25T13:40:00.000Z,completeDate=<null>,sequence=1,goal=Experience a proper sprint • Deliver MVP • Stayin alive, staying alive, uh uh uh uh stayin aliiiiive]"
+        ],
+        "environment": null,
+        "timeestimate": null,
+        "aggregatetimeoriginalestimate": null,
+        "versions": [],
+        "duedate": null,
+        "progress": {
+          "progress": 0,
+          "total": 0
+        },
+        "issuelinks": [],
+        "votes": {
+          "self": "http://localhost:8080/rest/api/2/issue/SCRM8-5/votes",
+          "votes": 0,
+          "hasVoted": false
+        },
+        "assignee": null,
+        "updated": "2019-02-11T12:50:38.000+0000",
+        "status": {
+          "self": "http://localhost:8080/rest/api/2/status/10000",
+          "description": "",
+          "iconUrl": "http://localhost:8080/images/icons/status_generic.gif",
+          "name": "To Do",
+          "id": "10000",
+          "statusCategory": {
+            "self": "http://localhost:8080/rest/api/2/statuscategory/2",
+            "id": 2,
+            "key": "new",
+            "colorName": "blue-gray",
+            "name": "To Do"
+          }
+        }
+      }
+    },
+    {
+      "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+      "id": "10103",
+      "self": "http://localhost:8080/rest/api/latest/issue/10103",
+      "key": "SCRM8-4",
+      "fields": {
+        "issuetype": {
+          "self": "http://localhost:8080/rest/api/2/issuetype/10000",
+          "id": "10000",
+          "description": "A task that needs to be done.",
+          "iconUrl": "http://localhost:8080/secure/viewavatar?size=xsmall&avatarId=10318&avatarType=issuetype",
+          "name": "Task",
+          "subtask": false,
+          "avatarId": 10318
+        },
+        "components": [],
+        "timespent": null,
+        "timeoriginalestimate": null,
+        "description": null,
+        "project": {
+          "self": "http://localhost:8080/rest/api/2/project/10100",
+          "id": "10100",
+          "key": "SCRM8",
+          "name": "Scrum8",
+          "projectTypeKey": "software",
+          "avatarUrls": {
+            "48x48": "http://localhost:8080/secure/projectavatar?avatarId=10324",
+            "24x24": "http://localhost:8080/secure/projectavatar?size=small&avatarId=10324",
+            "16x16": "http://localhost:8080/secure/projectavatar?size=xsmall&avatarId=10324",
+            "32x32": "http://localhost:8080/secure/projectavatar?size=medium&avatarId=10324"
+          }
+        },
+        "fixVersions": [],
+        "aggregatetimespent": null,
+        "resolution": null,
+        "customfield_10005": "0|i0000v:",
+        "customfield_10007": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@3fad516d[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@40f2b6d4[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@6c8ee7fb[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@399fb8a8[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@c9cf1f1[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@5a4b8e8d[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@41e11b00[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@57fa16c[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@6e87cb4b[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@683e0ff0[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@21ce20ec[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@59428178[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+        "aggregatetimeestimate": null,
+        "resolutiondate": null,
+        "workratio": -1,
+        "summary": "Another thing that needs to be done",
+        "lastViewed": null,
+        "watches": {
+          "self": "http://localhost:8080/rest/api/2/issue/SCRM8-4/watchers",
+          "watchCount": 1,
+          "isWatching": false
+        },
+        "creator": {
+          "self": "http://localhost:8080/rest/api/2/user?username=Esti+Murik",
+          "name": "Esti Murik",
+          "key": "esti murik",
+          "emailAddress": "e.murik@elsevier.com",
+          "avatarUrls": {
+            "48x48": "http://localhost:8080/secure/useravatar?avatarId=10336",
+            "24x24": "http://localhost:8080/secure/useravatar?size=small&avatarId=10336",
+            "16x16": "http://localhost:8080/secure/useravatar?size=xsmall&avatarId=10336",
+            "32x32": "http://localhost:8080/secure/useravatar?size=medium&avatarId=10336"
+          },
+          "displayName": "Esti Murik",
+          "active": true,
+          "timeZone": "GMT"
+        },
+        "subtasks": [],
+        "created": "2019-02-11T12:47:54.000+0000",
+        "reporter": {
+          "self": "http://localhost:8080/rest/api/2/user?username=Esti+Murik",
+          "name": "Esti Murik",
+          "key": "esti murik",
+          "emailAddress": "e.murik@elsevier.com",
+          "avatarUrls": {
+            "48x48": "http://localhost:8080/secure/useravatar?avatarId=10336",
+            "24x24": "http://localhost:8080/secure/useravatar?size=small&avatarId=10336",
+            "16x16": "http://localhost:8080/secure/useravatar?size=xsmall&avatarId=10336",
+            "32x32": "http://localhost:8080/secure/useravatar?size=medium&avatarId=10336"
+          },
+          "displayName": "Esti Murik",
+          "active": true,
+          "timeZone": "GMT"
+        },
+        "customfield_10000": null,
+        "aggregateprogress": {
+          "progress": 0,
+          "total": 0
+        },
+        "priority": {
+          "self": "http://localhost:8080/rest/api/2/priority/3",
+          "iconUrl": "http://localhost:8080/images/icons/priorities/medium.svg",
+          "name": "Medium",
+          "id": "3"
+        },
+        "labels": [],
+        "customfield_10004": [
+          "com.atlassian.greenhopper.service.sprint.Sprint@186187f8[id=1,rapidViewId=1,state=ACTIVE,name=SCRM8 Sprint 1,startDate=2019-02-11T13:40:30.348Z,endDate=2019-02-25T13:40:00.000Z,completeDate=<null>,sequence=1,goal=Experience a proper sprint • Deliver MVP • Stayin alive, staying alive, uh uh uh uh stayin aliiiiive]"
+        ],
+        "environment": null,
+        "timeestimate": null,
+        "aggregatetimeoriginalestimate": null,
+        "versions": [],
+        "duedate": null,
+        "progress": {
+          "progress": 0,
+          "total": 0
+        },
+        "issuelinks": [],
+        "votes": {
+          "self": "http://localhost:8080/rest/api/2/issue/SCRM8-4/votes",
+          "votes": 0,
+          "hasVoted": false
+        },
+        "assignee": null,
+        "updated": "2019-02-11T12:47:54.000+0000",
+        "status": {
+          "self": "http://localhost:8080/rest/api/2/status/10000",
+          "description": "",
+          "iconUrl": "http://localhost:8080/images/icons/status_generic.gif",
+          "name": "To Do",
+          "id": "10000",
+          "statusCategory": {
+            "self": "http://localhost:8080/rest/api/2/statuscategory/2",
+            "id": 2,
+            "key": "new",
+            "colorName": "blue-gray",
+            "name": "To Do"
+          }
+        }
+      }
+    },
+    {
+      "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+      "id": "10102",
+      "self": "http://localhost:8080/rest/api/latest/issue/10102",
+      "key": "SCRM8-3",
+      "fields": {
+        "issuetype": {
+          "self": "http://localhost:8080/rest/api/2/issuetype/10003",
+          "id": "10003",
+          "description": "Created by Jira Software - do not edit or delete. Issue type for a user story.",
+          "iconUrl": "http://localhost:8080/images/icons/issuetypes/story.svg",
+          "name": "Story",
+          "subtask": false
+        },
+        "components": [],
+        "timespent": null,
+        "timeoriginalestimate": null,
+        "description": null,
+        "project": {
+          "self": "http://localhost:8080/rest/api/2/project/10100",
+          "id": "10100",
+          "key": "SCRM8",
+          "name": "Scrum8",
+          "projectTypeKey": "software",
+          "avatarUrls": {
+            "48x48": "http://localhost:8080/secure/projectavatar?avatarId=10324",
+            "24x24": "http://localhost:8080/secure/projectavatar?size=small&avatarId=10324",
+            "16x16": "http://localhost:8080/secure/projectavatar?size=xsmall&avatarId=10324",
+            "32x32": "http://localhost:8080/secure/projectavatar?size=medium&avatarId=10324"
+          }
+        },
+        "fixVersions": [],
+        "aggregatetimespent": null,
+        "resolution": null,
+        "customfield_10005": "0|i0000n:",
+        "customfield_10006": null,
+        "customfield_10007": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@68a84b28[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@42340b0a[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@1cd9ddc2[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@7ed7e908[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@27f4d79e[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@5861e8[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@52bd8bec[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@13e3b71a[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@122acadf[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@513ebe53[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@6f62bd73[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@61b79ce2[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+        "aggregatetimeestimate": null,
+        "resolutiondate": null,
+        "workratio": -1,
+        "summary": "The 3rd thing we have to do",
+        "lastViewed": null,
+        "watches": {
+          "self": "http://localhost:8080/rest/api/2/issue/SCRM8-3/watchers",
+          "watchCount": 1,
+          "isWatching": false
+        },
+        "creator": {
+          "self": "http://localhost:8080/rest/api/2/user?username=Esti+Murik",
+          "name": "Esti Murik",
+          "key": "esti murik",
+          "emailAddress": "e.murik@elsevier.com",
+          "avatarUrls": {
+            "48x48": "http://localhost:8080/secure/useravatar?avatarId=10336",
+            "24x24": "http://localhost:8080/secure/useravatar?size=small&avatarId=10336",
+            "16x16": "http://localhost:8080/secure/useravatar?size=xsmall&avatarId=10336",
+            "32x32": "http://localhost:8080/secure/useravatar?size=medium&avatarId=10336"
+          },
+          "displayName": "Esti Murik",
+          "active": true,
+          "timeZone": "GMT"
+        },
+        "subtasks": [],
+        "created": "2019-02-11T12:47:10.000+0000",
+        "reporter": {
+          "self": "http://localhost:8080/rest/api/2/user?username=Esti+Murik",
+          "name": "Esti Murik",
+          "key": "esti murik",
+          "emailAddress": "e.murik@elsevier.com",
+          "avatarUrls": {
+            "48x48": "http://localhost:8080/secure/useravatar?avatarId=10336",
+            "24x24": "http://localhost:8080/secure/useravatar?size=small&avatarId=10336",
+            "16x16": "http://localhost:8080/secure/useravatar?size=xsmall&avatarId=10336",
+            "32x32": "http://localhost:8080/secure/useravatar?size=medium&avatarId=10336"
+          },
+          "displayName": "Esti Murik",
+          "active": true,
+          "timeZone": "GMT"
+        },
+        "customfield_10000": null,
+        "aggregateprogress": {
+          "progress": 0,
+          "total": 0
+        },
+        "priority": {
+          "self": "http://localhost:8080/rest/api/2/priority/3",
+          "iconUrl": "http://localhost:8080/images/icons/priorities/medium.svg",
+          "name": "Medium",
+          "id": "3"
+        },
+        "labels": [],
+        "customfield_10004": [
+          "com.atlassian.greenhopper.service.sprint.Sprint@186187f8[id=1,rapidViewId=1,state=ACTIVE,name=SCRM8 Sprint 1,startDate=2019-02-11T13:40:30.348Z,endDate=2019-02-25T13:40:00.000Z,completeDate=<null>,sequence=1,goal=Experience a proper sprint • Deliver MVP • Stayin alive, staying alive, uh uh uh uh stayin aliiiiive]"
+        ],
+        "environment": null,
+        "timeestimate": null,
+        "aggregatetimeoriginalestimate": null,
+        "versions": [],
+        "duedate": null,
+        "progress": {
+          "progress": 0,
+          "total": 0
+        },
+        "issuelinks": [],
+        "votes": {
+          "self": "http://localhost:8080/rest/api/2/issue/SCRM8-3/votes",
+          "votes": 0,
+          "hasVoted": false
+        },
+        "assignee": null,
+        "updated": "2019-02-11T12:50:58.000+0000",
+        "status": {
+          "self": "http://localhost:8080/rest/api/2/status/10000",
+          "description": "",
+          "iconUrl": "http://localhost:8080/images/icons/status_generic.gif",
+          "name": "To Do",
+          "id": "10000",
+          "statusCategory": {
+            "self": "http://localhost:8080/rest/api/2/statuscategory/2",
+            "id": 2,
+            "key": "new",
+            "colorName": "blue-gray",
+            "name": "To Do"
+          }
+        }
+      }
+    },
+    {
+      "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+      "id": "10101",
+      "self": "http://localhost:8080/rest/api/latest/issue/10101",
+      "key": "SCRM8-2",
+      "fields": {
+        "issuetype": {
+          "self": "http://localhost:8080/rest/api/2/issuetype/10003",
+          "id": "10003",
+          "description": "Created by Jira Software - do not edit or delete. Issue type for a user story.",
+          "iconUrl": "http://localhost:8080/images/icons/issuetypes/story.svg",
+          "name": "Story",
+          "subtask": false
+        },
+        "components": [],
+        "timespent": null,
+        "timeoriginalestimate": null,
+        "description": "BLa bla bla",
+        "project": {
+          "self": "http://localhost:8080/rest/api/2/project/10100",
+          "id": "10100",
+          "key": "SCRM8",
+          "name": "Scrum8",
+          "projectTypeKey": "software",
+          "avatarUrls": {
+            "48x48": "http://localhost:8080/secure/projectavatar?avatarId=10324",
+            "24x24": "http://localhost:8080/secure/projectavatar?size=small&avatarId=10324",
+            "16x16": "http://localhost:8080/secure/projectavatar?size=xsmall&avatarId=10324",
+            "32x32": "http://localhost:8080/secure/projectavatar?size=medium&avatarId=10324"
+          }
+        },
+        "fixVersions": [],
+        "aggregatetimespent": null,
+        "resolution": null,
+        "customfield_10005": "0|i0000f:",
+        "customfield_10006": null,
+        "customfield_10007": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@68feec45[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@48349c03[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@7161393[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@6b2e43f6[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@e2255a4[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@3cc559a8[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@bf85f28[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@12508c52[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@ec374c9[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@18dd64a0[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@5195798c[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@47315df0[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+        "aggregatetimeestimate": null,
+        "resolutiondate": null,
+        "workratio": -1,
+        "summary": "This is a test ticket",
+        "lastViewed": "2019-02-12T14:53:50.603+0000",
+        "watches": {
+          "self": "http://localhost:8080/rest/api/2/issue/SCRM8-2/watchers",
+          "watchCount": 1,
+          "isWatching": true
+        },
+        "creator": {
+          "self": "http://localhost:8080/rest/api/2/user?username=TsakirisG",
+          "name": "TsakirisG",
+          "key": "tsakirisg",
+          "emailAddress": "g.tsakiris@elsevier.com",
+          "avatarUrls": {
+            "48x48": "http://localhost:8080/secure/useravatar?ownerId=tsakirisg&avatarId=10500",
+            "24x24": "http://localhost:8080/secure/useravatar?size=small&ownerId=tsakirisg&avatarId=10500",
+            "16x16": "http://localhost:8080/secure/useravatar?size=xsmall&ownerId=tsakirisg&avatarId=10500",
+            "32x32": "http://localhost:8080/secure/useravatar?size=medium&ownerId=tsakirisg&avatarId=10500"
+          },
+          "displayName": "IOANNIS TSAKIRIS",
+          "active": true,
+          "timeZone": "GMT"
+        },
+        "subtasks": [],
+        "created": "2019-02-11T12:40:20.000+0000",
+        "reporter": {
+          "self": "http://localhost:8080/rest/api/2/user?username=TsakirisG",
+          "name": "TsakirisG",
+          "key": "tsakirisg",
+          "emailAddress": "g.tsakiris@elsevier.com",
+          "avatarUrls": {
+            "48x48": "http://localhost:8080/secure/useravatar?ownerId=tsakirisg&avatarId=10500",
+            "24x24": "http://localhost:8080/secure/useravatar?size=small&ownerId=tsakirisg&avatarId=10500",
+            "16x16": "http://localhost:8080/secure/useravatar?size=xsmall&ownerId=tsakirisg&avatarId=10500",
+            "32x32": "http://localhost:8080/secure/useravatar?size=medium&ownerId=tsakirisg&avatarId=10500"
+          },
+          "displayName": "IOANNIS TSAKIRIS",
+          "active": true,
+          "timeZone": "GMT"
+        },
+        "customfield_10000": null,
+        "aggregateprogress": {
+          "progress": 0,
+          "total": 0
+        },
+        "priority": {
+          "self": "http://localhost:8080/rest/api/2/priority/3",
+          "iconUrl": "http://localhost:8080/images/icons/priorities/medium.svg",
+          "name": "Medium",
+          "id": "3"
+        },
+        "labels": [],
+        "customfield_10004": [
+          "com.atlassian.greenhopper.service.sprint.Sprint@186187f8[id=1,rapidViewId=1,state=ACTIVE,name=SCRM8 Sprint 1,startDate=2019-02-11T13:40:30.348Z,endDate=2019-02-25T13:40:00.000Z,completeDate=<null>,sequence=1,goal=Experience a proper sprint • Deliver MVP • Stayin alive, staying alive, uh uh uh uh stayin aliiiiive]"
+        ],
+        "environment": null,
+        "timeestimate": null,
+        "aggregatetimeoriginalestimate": null,
+        "versions": [],
+        "duedate": null,
+        "progress": {
+          "progress": 0,
+          "total": 0
+        },
+        "issuelinks": [],
+        "votes": {
+          "self": "http://localhost:8080/rest/api/2/issue/SCRM8-2/votes",
+          "votes": 0,
+          "hasVoted": false
+        },
+        "assignee": {
+          "self": "http://localhost:8080/rest/api/2/user?username=TsakirisG",
+          "name": "TsakirisG",
+          "key": "tsakirisg",
+          "emailAddress": "g.tsakiris@elsevier.com",
+          "avatarUrls": {
+            "48x48": "http://localhost:8080/secure/useravatar?ownerId=tsakirisg&avatarId=10500",
+            "24x24": "http://localhost:8080/secure/useravatar?size=small&ownerId=tsakirisg&avatarId=10500",
+            "16x16": "http://localhost:8080/secure/useravatar?size=xsmall&ownerId=tsakirisg&avatarId=10500",
+            "32x32": "http://localhost:8080/secure/useravatar?size=medium&ownerId=tsakirisg&avatarId=10500"
+          },
+          "displayName": "IOANNIS TSAKIRIS",
+          "active": true,
+          "timeZone": "GMT"
+        },
+        "updated": "2019-02-12T14:53:47.000+0000",
+        "status": {
+          "self": "http://localhost:8080/rest/api/2/status/3",
+          "description": "This issue is being actively worked on at the moment by the assignee.",
+          "iconUrl": "http://localhost:8080/images/icons/statuses/inprogress.png",
+          "name": "In Progress",
+          "id": "3",
+          "statusCategory": {
+            "self": "http://localhost:8080/rest/api/2/statuscategory/4",
+            "id": 4,
+            "key": "indeterminate",
+            "colorName": "yellow",
+            "name": "In Progress"
+          }
+        }
+      }
+    },
+    {
+      "expand": "operations,versionedRepresentations,editmeta,changelog,renderedFields",
+      "id": "10100",
+      "self": "http://localhost:8080/rest/api/latest/issue/10100",
+      "key": "SCRM8-1",
+      "fields": {
+        "issuetype": {
+          "self": "http://localhost:8080/rest/api/2/issuetype/10003",
+          "id": "10003",
+          "description": "Created by Jira Software - do not edit or delete. Issue type for a user story.",
+          "iconUrl": "http://localhost:8080/images/icons/issuetypes/story.svg",
+          "name": "Story",
+          "subtask": false
+        },
+        "components": [],
+        "timespent": null,
+        "timeoriginalestimate": null,
+        "description": null,
+        "project": {
+          "self": "http://localhost:8080/rest/api/2/project/10100",
+          "id": "10100",
+          "key": "SCRM8",
+          "name": "Scrum8",
+          "projectTypeKey": "software",
+          "avatarUrls": {
+            "48x48": "http://localhost:8080/secure/projectavatar?avatarId=10324",
+            "24x24": "http://localhost:8080/secure/projectavatar?size=small&avatarId=10324",
+            "16x16": "http://localhost:8080/secure/projectavatar?size=xsmall&avatarId=10324",
+            "32x32": "http://localhost:8080/secure/projectavatar?size=medium&avatarId=10324"
+          }
+        },
+        "fixVersions": [],
+        "aggregatetimespent": null,
+        "resolution": null,
+        "customfield_10005": "0|i00007:",
+        "customfield_10006": null,
+        "customfield_10007": "{summaryBean=com.atlassian.jira.plugin.devstatus.rest.SummaryBean@7437a756[summary={pullrequest=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@7e7636cf[overall=PullRequestOverallBean{stateCount=0, state='OPEN', details=PullRequestOverallDetails{openCount=0, mergedCount=0, declinedCount=0}},byInstanceType={}], build=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@7c6b3791[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BuildOverallBean@33e4a69d[failedBuildCount=0,successfulBuildCount=0,unknownBuildCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], review=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@1d0d0afd[overall=com.atlassian.jira.plugin.devstatus.summary.beans.ReviewsOverallBean@51b5ee3a[stateCount=0,state=<null>,dueDate=<null>,overDue=false,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], deployment-environment=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@74c79c22[overall=com.atlassian.jira.plugin.devstatus.summary.beans.DeploymentOverallBean@62810c69[topEnvironments=[],showProjects=false,successfulCount=0,count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], repository=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@172ea826[overall=com.atlassian.jira.plugin.devstatus.summary.beans.CommitOverallBean@699450c7[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}], branch=com.atlassian.jira.plugin.devstatus.rest.SummaryItemBean@21faf75b[overall=com.atlassian.jira.plugin.devstatus.summary.beans.BranchOverallBean@4bf25549[count=0,lastUpdated=<null>,lastUpdatedTimestamp=<null>],byInstanceType={}]},errors=[],configErrors=[]], devSummaryJson={\"cachedValue\":{\"errors\":[],\"configErrors\":[],\"summary\":{\"pullrequest\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":\"OPEN\",\"details\":{\"openCount\":0,\"mergedCount\":0,\"declinedCount\":0,\"total\":0},\"open\":true},\"byInstanceType\":{}},\"build\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"failedBuildCount\":0,\"successfulBuildCount\":0,\"unknownBuildCount\":0},\"byInstanceType\":{}},\"review\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"stateCount\":0,\"state\":null,\"dueDate\":null,\"overDue\":false,\"completed\":false},\"byInstanceType\":{}},\"deployment-environment\":{\"overall\":{\"count\":0,\"lastUpdated\":null,\"topEnvironments\":[],\"showProjects\":false,\"successfulCount\":0},\"byInstanceType\":{}},\"repository\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}},\"branch\":{\"overall\":{\"count\":0,\"lastUpdated\":null},\"byInstanceType\":{}}}},\"isStale\":false}}",
+        "aggregatetimeestimate": null,
+        "resolutiondate": null,
+        "workratio": -1,
+        "summary": "The first thing we need to do",
+        "lastViewed": "2019-02-12T15:56:58.682+0000",
+        "watches": {
+          "self": "http://localhost:8080/rest/api/2/issue/SCRM8-1/watchers",
+          "watchCount": 1,
+          "isWatching": false
+        },
+        "creator": {
+          "self": "http://localhost:8080/rest/api/2/user?username=Esti+Murik",
+          "name": "Esti Murik",
+          "key": "esti murik",
+          "emailAddress": "e.murik@elsevier.com",
+          "avatarUrls": {
+            "48x48": "http://localhost:8080/secure/useravatar?avatarId=10336",
+            "24x24": "http://localhost:8080/secure/useravatar?size=small&avatarId=10336",
+            "16x16": "http://localhost:8080/secure/useravatar?size=xsmall&avatarId=10336",
+            "32x32": "http://localhost:8080/secure/useravatar?size=medium&avatarId=10336"
+          },
+          "displayName": "Esti Murik",
+          "active": true,
+          "timeZone": "GMT"
+        },
+        "subtasks": [],
+        "created": "2019-02-11T12:39:59.000+0000",
+        "reporter": {
+          "self": "http://localhost:8080/rest/api/2/user?username=Esti+Murik",
+          "name": "Esti Murik",
+          "key": "esti murik",
+          "emailAddress": "e.murik@elsevier.com",
+          "avatarUrls": {
+            "48x48": "http://localhost:8080/secure/useravatar?avatarId=10336",
+            "24x24": "http://localhost:8080/secure/useravatar?size=small&avatarId=10336",
+            "16x16": "http://localhost:8080/secure/useravatar?size=xsmall&avatarId=10336",
+            "32x32": "http://localhost:8080/secure/useravatar?size=medium&avatarId=10336"
+          },
+          "displayName": "Esti Murik",
+          "active": true,
+          "timeZone": "GMT"
+        },
+        "customfield_10000": null,
+        "aggregateprogress": {
+          "progress": 0,
+          "total": 0
+        },
+        "priority": {
+          "self": "http://localhost:8080/rest/api/2/priority/3",
+          "iconUrl": "http://localhost:8080/images/icons/priorities/medium.svg",
+          "name": "Medium",
+          "id": "3"
+        },
+        "labels": [],
+        "customfield_10004": [
+          "com.atlassian.greenhopper.service.sprint.Sprint@186187f8[id=1,rapidViewId=1,state=ACTIVE,name=SCRM8 Sprint 1,startDate=2019-02-11T13:40:30.348Z,endDate=2019-02-25T13:40:00.000Z,completeDate=<null>,sequence=1,goal=Experience a proper sprint • Deliver MVP • Stayin alive, staying alive, uh uh uh uh stayin aliiiiive]"
+        ],
+        "environment": null,
+        "timeestimate": null,
+        "aggregatetimeoriginalestimate": null,
+        "versions": [],
+        "duedate": null,
+        "progress": {
+          "progress": 0,
+          "total": 0
+        },
+        "issuelinks": [],
+        "votes": {
+          "self": "http://localhost:8080/rest/api/2/issue/SCRM8-1/votes",
+          "votes": 0,
+          "hasVoted": false
+        },
+        "assignee": null,
+        "updated": "2019-02-12T15:56:49.000+0000",
+        "status": {
+          "self": "http://localhost:8080/rest/api/2/status/10000",
+          "description": "",
+          "iconUrl": "http://localhost:8080/images/icons/status_generic.gif",
+          "name": "To Do",
+          "id": "10000",
+          "statusCategory": {
+            "self": "http://localhost:8080/rest/api/2/statuscategory/2",
+            "id": 2,
+            "key": "new",
+            "colorName": "blue-gray",
+            "name": "To Do"
+          }
+        }
+      }
+    }
+  ]
+}

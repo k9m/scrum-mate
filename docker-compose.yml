@@ -2,15 +2,15 @@ version: '3.2'
 
 services:
 
-  scrum8-ocr:
-    image: fca/scrum8-ocr:latest
-    ports:
-      - "8081:8081"
-
-  scrum8-services:
-    image: fca/scrum8-services:latest
-    ports:
-      - "8082:8082"
+#  scrum8-ocr:
+#    image: fca/scrum8-ocr:latest
+#    ports:
+#      - "8081:8081"
+#
+#  scrum8-services:
+#    image: fca/scrum8-services:latest
+#    ports:
+#      - "8082:8082"
 
   jira:
     image: cptactionhank/atlassian-jira:latest
