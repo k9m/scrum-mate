@@ -10,7 +10,7 @@ def update_tickets(tickets_dic):
             payload = {'targetState': status}
             response = requests.post(JIRA_UPDATE_URL + ticket, json=payload)
             if response.ok:
-                response_dic[ticket] = 'Updated!'
+                response_dic[ticket] = 'Updated to ' + status
             else:
                 response_dic[ticket] = response.json()['message']
     return response_dic

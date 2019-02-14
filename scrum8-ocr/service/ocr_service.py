@@ -19,7 +19,7 @@ def crop_image(image, start_column, end_column):
 
 
 def split_image_to_columns(image):
-    columns = []
+    columns_dic = {}
     height, width = image.shape[:2]
 
     decoded = decode(image, symbols=[ZBarSymbol.QRCODE])
@@ -41,9 +41,9 @@ def split_image_to_columns(image):
             end_column = width
 
         cropped_image = crop_image(image, start_column, end_column)
-        columns.append(cropped_image)
+        columns_dic[qr_dic[x_axis]] = cropped_image
 
-    return columns, list(qr_dic.values())
+    return columns_dic
 
 
 def get_ticket_numbers(text, prefix):
@@ -52,19 +52,19 @@ def get_ticket_numbers(text, prefix):
 
 def process(image_file):
     img = cv2.imdecode(np.frombuffer(image_file, np.uint8), -1)
-    columns, labels = split_image_to_columns(img)
+    columns_dic = split_image_to_columns(img)
 
     tickets_dic = {}
-    for i in range(len(columns)):
-        text = pytesseract.image_to_string(columns[i])
+    for status in columns_dic.keys():
+        text = pytesseract.image_to_string(columns_dic[status])
         tickets = get_ticket_numbers(text, JIRA_TICKET_PREFIX)
         # print(tickets)
-        text2 = pytesseract.image_to_string(columns[i], config="--psm 6")
+        text2 = pytesseract.image_to_string(columns_dic[status], config="--psm 6")
         tickets2 = get_ticket_numbers(text2, JIRA_TICKET_PREFIX)
         # print(tickets2)
-        text3 = pytesseract.image_to_string(columns[i], config="--psm 11")
+        text3 = pytesseract.image_to_string(columns_dic[status], config="--psm 11")
         tickets3 = get_ticket_numbers(text3, JIRA_TICKET_PREFIX)
         # print(tickets3)
-        tickets_dic[labels[i]] = list(set(tickets + tickets2 + tickets3))
+        tickets_dic[status] = list(set(tickets + tickets2 + tickets3))
 
     return json.dumps(update_tickets(tickets_dic))

@@ -8,23 +8,22 @@ JIRA_TICKET_PREFIX = 'SCRM8'
 
 def get_board(path):
     img = cv2.imread(path)
-    columns, labels = split_image_to_columns(img)
-
-    for i in range(len(columns)):
-        cv2.imwrite('column' + str(i) + '.jpg', columns[i])
+    columns_dic = split_image_to_columns(img)
 
     tickets_dic = {}
-    for i in range(len(columns)):
-        text = pytesseract.image_to_string(columns[i])
+    for status in columns_dic.keys():
+        cv2.imwrite(status + '.jpg', columns_dic[status])
+
+        text = pytesseract.image_to_string(columns_dic[status])
         tickets = get_ticket_numbers(text, JIRA_TICKET_PREFIX)
         print(tickets)
-        text2 = pytesseract.image_to_string(columns[i], config="--psm 6")
+        text2 = pytesseract.image_to_string(columns_dic[status], config="--psm 6")
         tickets2 = get_ticket_numbers(text2, JIRA_TICKET_PREFIX)
         print(tickets2)
-        text3 = pytesseract.image_to_string(columns[i], config="--psm 11")
+        text3 = pytesseract.image_to_string(columns_dic[status], config="--psm 11")
         tickets3 = get_ticket_numbers(text3, JIRA_TICKET_PREFIX)
         print(tickets3)
-        tickets_dic[labels[i]] = list(set(tickets + tickets2 + tickets3))
+        tickets_dic[status] = list(set(tickets + tickets2 + tickets3))
 
     return tickets_dic
 
