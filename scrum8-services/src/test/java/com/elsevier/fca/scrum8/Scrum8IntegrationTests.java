@@ -6,4 +6,4 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = "src/test/resources")
-public class Scrum8IntegrationTest {}
+public class Scrum8IntegrationTests {}
