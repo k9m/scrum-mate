@@ -1,0 +1,17 @@
+{
+  "maxResults": 50,
+  "startAt": 0,
+  "isLast": true,
+  "values": [
+    {
+      "id": 1,
+      "self": "http://localhost:8080/rest/agile/1.0/sprint/1",
+      "state": "active",
+      "name": "SCRM8 Sprint 1",
+      "startDate": "2019-02-11T13:40:30.348Z",
+      "endDate": "2019-02-25T13:40:00.000Z",
+      "originBoardId": 1,
+      "goal": "Experience a proper sprint • Deliver MVP • Stayin alive, staying alive, uh uh uh uh stayin aliiiiive"
+    }
+  ]
+}
