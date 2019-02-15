@@ -1,5 +1,4 @@
-group 'com.elsevier.fca'
-version '1.0-SNAPSHOT'
+
 
 buildscript {
     ext {
@@ -10,15 +9,25 @@ buildscript {
         mavenCentral()
     }
 
-    dependencies{
+    dependencies {
         classpath "org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}"
+        classpath "gradle.plugin.com.palantir:jacoco-coverage:0.4.0"
     }
+
+}
+
+plugins {
+    id 'jacoco'
 }
 
 
-wrapper{
+wrapper {
     distributionType = Wrapper.DistributionType.ALL
 }
+
+group 'com.elsevier.fca'
+version '1.0-SNAPSHOT'
+
 
 allprojects {
     repositories {
@@ -28,6 +37,7 @@ allprojects {
 
 subprojects {
     tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
         sourceCompatibility = "1.8"
         targetCompatibility = "1.8"
     }
@@ -35,19 +45,70 @@ subprojects {
     apply plugin: 'java'
     apply plugin: 'idea'
     apply plugin: 'eclipse'
+    apply plugin: 'jacoco'
     apply plugin: 'io.spring.dependency-management'
+    apply plugin: "com.palantir.jacoco-full-report"
+
 
     dependencyManagement {
         imports { mavenBom org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES }
     }
 
-    dependencies{
+    dependencies {
         implementation platform("org.springframework.boot:spring-boot-dependencies:$springBootVersion")
+    }
+
+    test {
+        finalizedBy jacocoTestReport
+
+        jacoco {
+            destinationFile = file("$buildDir/jacoco/jacoco.exec")
+            classDumpDir = file("$buildDir/jacoco/classpathdumps")
+        }
+
+        jacocoTestReport {
+            dependsOn( subprojects.collect { it.tasks.getByName('jacocoMerge')} )
+            reports {
+                xml.enabled true
+                csv.enabled true
+                html.enabled true
+                html.destination file("${buildDir}/jacoco-reports")
+            }
+        }
     }
 
 }
 
-task untar(type: Copy){
+
+task untar(type: Copy) {
     from tarTree(file('build/jira.tar.gz'))
     into file("${buildDir}")
 }
+
+task jacocoMerge( type: JacocoMerge ) {
+    dependsOn( subprojects.collect { it.tasks.getByName('test')} )
+    executionData = project.fileTree(dir: '.', include:'**/build/jacoco/*.exec')
+    destinationFile = file( "${buildDir}/jacoco/jacocoCombined.exec" )
+}
+
+task jacocoRootReport(type: org.gradle.testing.jacoco.tasks.JacocoReport) {
+    dependsOn( subprojects.collect { it.tasks.getByName('test')} )
+    additionalSourceDirs = files(subprojects.sourceSets.main.allSource.srcDirs)
+    sourceDirectories = files(subprojects.sourceSets.main.allSource.srcDirs)
+    classDirectories = files(subprojects.sourceSets.main.output)
+    executionData = files(subprojects.jacocoTestReport.executionData)
+    reports {
+        html.enabled = true
+        xml.enabled = true
+        csv.enabled = false
+    }
+    onlyIf = {
+        true
+    }
+    doFirst {
+        executionData = files(executionData.findAll {
+            it.exists()
+        })
+    }
+}
+

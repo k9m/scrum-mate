@@ -30,4 +30,16 @@ dependencies {
     testImplementation group : 'org.mock-server', name : 'mockserver-client-java', version: wireMockVersion
 }
 
+springBoot {
+    buildInfo {
+        properties {
+            artifact = project.name
+            version = rootProject.version
+            group = project.group
+            name = project.description
+        }
+    }
+}
+
+
 
