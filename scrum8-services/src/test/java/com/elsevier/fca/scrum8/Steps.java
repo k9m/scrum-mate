@@ -4,16 +4,18 @@ import com.elsevier.fca.scrum8.services.ticketing.dto.StateTransitionRequest;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
 import lombok.extern.slf4j.Slf4j;
 import org.mockserver.client.MockServerClient;
-import org.mockserver.integration.ClientAndServer;
 import org.mockserver.model.Header;
 import org.mockserver.model.Parameter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.server.LocalServerPort;
+import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
-import static org.mockserver.integration.ClientAndServer.startClientAndServer;
+import static com.elsevier.fca.scrum8.Scrum8IntegrationTests.mockPort;
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockserver.matchers.Times.exactly;
 import static org.mockserver.matchers.Times.unlimited;
 import static org.mockserver.model.HttpRequest.request;
@@ -21,22 +23,21 @@ import static org.mockserver.model.HttpResponse.response;
 
 @Slf4j
 @CukeSteps
-public class UpdateSteps {
+public class Steps {
 
     @LocalServerPort
     private int serverPort;
-    private int mockPort = 9999;
 
     @Autowired
     private RestTemplate restTemplate;
 
-    private ClientAndServer mockServer;
+    private Exception lastThrownException;
 
 
     @Before
     public void beforeScenario() {
         log.info("Before Scenario");
-        mockServer = startClientAndServer(mockPort);
+        new MockServerClient("localhost", serverPort).reset();
         setupGetSprintMockResponse();
         setupSearchtMockResponse();
 
@@ -44,7 +45,7 @@ public class UpdateSteps {
 
     @Given("the system has started up")
     public void theSystemHasStartedUp() {
-
+        //TODO ping actuator
     }
 
     @Given("an update for ticket (.*) with status (.*) is requested")
@@ -54,15 +55,33 @@ public class UpdateSteps {
 
         final StateTransitionRequest transitionRequest = new StateTransitionRequest();
         transitionRequest.setTargetState(status);
-        restTemplate.postForObject("http://localhost:" + serverPort + "/tickets/" + ticketNumber, transitionRequest, Void.class);
+        try {
+            restTemplate.postForObject("http://localhost:" + serverPort + "/tickets/" + ticketNumber, transitionRequest, Void.class);
+        } catch (RestClientException e) {
+            lastThrownException = e;
+            log.error("@@@ Exception scenario:", e);
+        }
 
+    }
+
+    @Then("^the response should be (\\d+) with message (.*)$")
+    public void theResponseShouldBeWithMessageUpdated(final int httpStatus, final String msg) {
+        //TODO implement response
+    }
+
+
+    @Then("^an exception should be raised with message (.*)$")
+    public void exceptionShouldBeRaised(final String msg) {
+        assertThat(lastThrownException.getMessage().equals(msg));
     }
 
     @After
     public void afterScenario() {
         log.info("After Scenario");
-        mockServer.stop();
+//        mockServer.stop();
     }
+
+
 
     private void setupGetSprintMockResponse() {
         final String response = JsonUtils.readJSON("test-data/sprint.json");
@@ -135,7 +154,4 @@ public class UpdateSteps {
                                 .withBody(response)
                 );
     }
-
-
-
 }

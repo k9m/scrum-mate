@@ -38,7 +38,7 @@ public class RestClient {
   }
 
   public Sprint retrieveActiveSprint() {
-    String uri = restConfiguration.getBaseUrl() + "/agile/latest/board/1/sprint?state=active&maxResults=1";
+    String uri = restConfiguration.getBaseUrl()   + "/agile/latest/board/1/sprint?state=active&maxResults=1";
     return simpleGet(uri, Sprints.class).getValues().get(0);
   }
 
