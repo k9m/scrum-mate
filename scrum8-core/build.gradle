@@ -1,6 +1,2 @@
 group 'com.elsevier.fca'
 version '1.0-SNAPSHOT'
-
-dependencies {
-    testImplementation group: 'junit', name: 'junit'
-}
