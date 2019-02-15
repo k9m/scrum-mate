@@ -18,7 +18,18 @@ public class JiraSprintTicketCheck implements SprintTicketCheck {
   @Override
   public boolean isInActiveSprint(String key) {
     Sprint sprint = restClient.retrieveActiveSprint();
+    if (sprint == null) {
+      throw new RuntimeException("No Sprint is active in Jira");
+    }
+
     List<Issue> issues = restClient.retrieveIssuesBySprint(sprint.getId());
+    if (issues == null) {
+      final String message = String
+          .format("Unexpected response from Jira when retrieving issues in Sprint %s",
+              sprint.getName());
+      throw new RuntimeException(message);
+    }
+
     return issues.stream().anyMatch(x -> x.getKey().equals(key));
   }
 

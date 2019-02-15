@@ -9,6 +9,4 @@ dependencies {
 
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
-
-    testImplementation group: 'junit', name: 'junit'
 }

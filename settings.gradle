@@ -4,3 +4,9 @@ include 'scrum8-jira'
 include 'scrum8-services'
 include 'scrum8-ocr'
 
+buildCache {
+    local {
+        enabled = false
+    }
+}
+
